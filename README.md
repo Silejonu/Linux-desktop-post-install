@@ -14,6 +14,7 @@ cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/a
 - Targets the latest *(LTS)* release of a given distro.
 - Every change done to the default distribution configuration is meant to improve user-friendliness, and does not include purely personal preferences.
 - Accounts for localisation.
+- Should be ran just once, but won't break anything if ran a thousand times.
 
 ### Currently supported distributions
 - Ubuntu
