@@ -7,7 +7,6 @@ cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/a
 ```
 
 ## Goals of this script
-
 - One-stop-script to configure a freshly installed Linux system.
 - The configuration is targeted towards non-technical users and Linux beginners (the typical target demographic is someone attending an install party).
 - As little manual intervention as possible, everything that can be automated will be automated.
@@ -15,6 +14,14 @@ cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/a
 - Every change done to the default distribution configuration is meant to improve user-friendliness, and does not include purely personal preferences.
 - Accounts for localisation.
 - Should be ran just once, but won't break anything if ran a thousand times.
+
+## What it actually does
+- Update the system
+- Install proprietary codecs, fonts and drivers
+- Add uBlock Origin to Mozilla Firefox
+- Small tweaks to the desktop environment aimed at better user-friendliness/cleaner UI
+- Enable Timeshift on systems with more than 200GB of disk capacity
+- Enable the firewall
 
 ### Currently supported distributions
 - Ubuntu
