@@ -23,11 +23,6 @@ fi
 #   exit 1
 # fi
 
-confirmation() {
-  notify-send --hint=int:transient:1 "Post-installation" "${message_confirmation}"
-  printf "%s\n" "${message_confirmation}"
-}
-
 case $(printf "%s" "${XDG_SESSION_DESKTOP}") in
   gnome|ubuntu)
     source ./modules/desktop_environments/config_gnome.sh
@@ -68,6 +63,11 @@ config_firefox
 
 source ./modules/programs/config_timeshift.sh
 config_timeshift
+
+confirmation() {
+  notify-send --hint=int:transient:1 "Post-installation" "${message_confirmation}"
+  printf "%s\n" "${message_confirmation}"
+}
 
 exit 0
 
