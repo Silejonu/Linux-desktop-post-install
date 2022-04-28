@@ -30,4 +30,7 @@ sudo dnf install -y htop
 sudo dnf install -y firewall-config -y
 
 ## Nvidia ##
+if [[ $(lspci | grep -ci NVIDIA) -gt 0 ]] ; then
+  sudo dnf install -y akmod-nvidia
+fi
 }
