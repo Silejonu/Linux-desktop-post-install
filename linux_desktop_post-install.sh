@@ -66,6 +66,8 @@ config_firefox
 notify-send --hint=int:transient:1 "Post-installation" "${message_confirmation}"
 printf "%s\n" "${message_confirmation}"
 
+cd -
+
 exit 0
 
 
