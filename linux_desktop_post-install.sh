@@ -3,7 +3,7 @@
 version='v0.2'
 
 if [[ $(locale language) == French ]] ; then
-  source ./translations/fr.sh
+  source ./translations/fra.sh
 else
   message_root='Error: do not run this script with superuser privileges.'
   message_mintupdate='Starting updates…'
