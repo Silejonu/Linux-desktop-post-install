@@ -83,9 +83,7 @@ exit 0
 # sudo swapoff /swapfile ; sudo rm /swapfile ; sudo fallocate -l 4G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile
 
 ## Installer Google Chrome
-# wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-# sudo apt install ./google-chrome-stable_current_amd64.deb
-# rm ./google-chrome-stable_current_amd64.deb
+cd $(mktemp -d) && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo apt install -y ./google-chrome-stable_current_amd64.deb
 
 
 ### À retravailler ###
