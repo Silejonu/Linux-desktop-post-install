@@ -10,6 +10,7 @@ cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/a
 - One-stop-script to configure a freshly installed Linux system.
 - The configuration is targeted towards non-technical users and Linux beginners (the typical target demographic is someone attending an install party).
 - As little manual intervention as possible, everything that can be automated will be automated.
+- If it can't be automated, the program will open itself and a notification will tell you what to do.
 - Targets the latest *(LTS)* release of a given distro.
 - Every change done to the default distribution configuration is meant to improve user-friendliness, and does not include purely personal preferences.
 - Accounts for localisation.
