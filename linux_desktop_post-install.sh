@@ -34,6 +34,8 @@ case $(cat /etc/*-release 2> /dev/null | grep ^NAME | sed 's/NAME=//' | tr -d \"
     config_ubuntu
     source ./modules/distributions/config_ubuntu_based.sh
     config_ubuntu_based
+    source ./modules/programs/config_timeshift.sh
+    config_timeshift
     # Manually install proprietary drivers
     software-properties-gtk --open-tab=4
     wait "$(pidof software-properties-gtk)"
@@ -43,6 +45,8 @@ case $(cat /etc/*-release 2> /dev/null | grep ^NAME | sed 's/NAME=//' | tr -d \"
     config_mint
     source ./modules/distributions/config_ubuntu_based.sh
     config_ubuntu_based
+    source ./modules/programs/config_timeshift.sh
+    config_timeshift
     # Manually install proprietary drivers
     nohup sudo mintdrivers &> /dev/null
     until [[ $(pgrep mintdrivers | wc -l) == 0 ]] ; do
@@ -52,13 +56,11 @@ case $(cat /etc/*-release 2> /dev/null | grep ^NAME | sed 's/NAME=//' | tr -d \"
   'Fedora Linux' )
     source ./modules/distributions/config_fedora.sh
     confi_fedora
+    confirmation ;;
 esac
 
 source ./modules/programs/config_firefox.sh
 config_firefox
-
-source ./modules/programs/config_timeshift.sh
-config_timeshift
 
 confirmation() {
   notify-send --hint=int:transient:1 "Post-installation" "${message_confirmation}"
