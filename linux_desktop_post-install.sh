@@ -49,6 +49,9 @@ case $(cat /etc/*-release 2> /dev/null | grep ^NAME | sed 's/NAME=//' | tr -d \"
       sleep 1
     done
     confirmation ;;
+  'Fedora Linux' )
+    source ./modules/distributions/config_fedora.sh
+    confi_fedora
 esac
 
 source ./modules/programs/config_firefox.sh
