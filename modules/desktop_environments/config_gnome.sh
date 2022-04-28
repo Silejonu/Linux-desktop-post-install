@@ -13,6 +13,8 @@ config_gnome() {
   ## Interface ##
   # Afficher le jour de la semaine dans l'horloge
   gsettings set org.gnome.desktop.interface clock-show-weekday true
+  # Show battery percentage
+  gsettings set org.gnome.desktop.interface show-battery-percentage true
   ## Sécurité & confidentialité ##
   # Régler la mise en veille automatique sur 15 minutes
   gsettings set org.gnome.desktop.session idle-delay 900
