@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-version='v0.1'
+version='v0.2'
 
 if [[ $(locale language) == French ]] ; then
   source ./translations/fr-FR.sh
@@ -62,12 +62,11 @@ esac
 source ./modules/programs/config_firefox.sh
 config_firefox
 
-
 notify-send --hint=int:transient:1 "Post-installation" "${message_confirmation}"
 printf "%s\n" "${message_confirmation}"
 
-
 exit 0
+
 
 
 ### Facultatif ###
