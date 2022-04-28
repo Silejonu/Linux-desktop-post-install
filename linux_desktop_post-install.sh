@@ -6,7 +6,6 @@ if [[ $(locale language) == French ]] ; then
   source ./translations/fr-FR.sh
 else
   message_root='Error: do not run this script with superuser privileges.'
-  #message_version='Error: a newer version of this script is available at ???'
   message_mintupdate='Starting updates…'
   firefox_notification='Install uBlock Origin and allow it to run in private mode.'
   message_confirmation='Post-install finished. Please reboot the computer.'
@@ -16,12 +15,6 @@ if [[ ${UID} == 0 ]] ; then
   echo "${message_root}"
   exit 1
 fi
-
-# if [[ $(curl --silent "https://api.github.com/repos/Silejonu/???/releases/latest" | grep '"tag_name":' | cut -d'"' -f4) != "${version}" ]] ; then
-#   printf "%s\n" "${message_version}"
-#   notify-send --hint=int:transient:1 'Post-installation' "${message_version}"
-#   exit 1
-# fi
 
 case $(printf "%s" "${XDG_SESSION_DESKTOP}") in
   gnome|ubuntu)
