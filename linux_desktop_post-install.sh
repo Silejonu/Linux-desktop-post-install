@@ -55,7 +55,7 @@ case $(cat /etc/*-release 2> /dev/null | grep ^NAME | sed 's/NAME=//' | tr -d \"
     confirmation ;;
   'Fedora Linux' )
     source ./modules/distributions/config_fedora.sh
-    confi_fedora
+    config_fedora
     confirmation ;;
 esac
 
