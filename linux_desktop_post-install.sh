@@ -71,11 +71,6 @@ exit 0
 
 ### Facultatif ###
 
-### Pour les ordinateurs portables ###
-## Réduire la consommation de la batterie (choisir l'un ou l'autre)
-# sudo apt install -y tlp tlp-rdw
-# sudo snap install auto-cpufreq && sudo auto-cpufreq --install
-
 ### Pour les ordinateurs disposant de 3 Go de mémoire vive ou moins ###
 ## Activer la compression de la mémoire vive
 # sudo apt install zram-config
