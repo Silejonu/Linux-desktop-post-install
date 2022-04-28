@@ -9,7 +9,7 @@ config_firefox() {
   # Identifier le répertoire du profil principal de Firefox
   fichier_preferences="$(find ${HOME}/.mozilla/firefox -iname *default-release*)/prefs.js"
   if [[ -d ${HOME}/snap/firefox ]] ; then
-    fichier_preferences="$(find ${HOME}/snap/firefox/common/.mozilla/firefox -iname *default)/prefs.js"
+    fichier_preferences="$(find ${HOME}/snap/firefox/common/.mozilla/firefox -iname *default | head -n1)/prefs.js"
   fi
   # Définir les préférences à modifier
   preferences=(
