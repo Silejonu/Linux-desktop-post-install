@@ -39,7 +39,7 @@ case $(cat /etc/*-release 2> /dev/null | grep ^NAME | sed 's/NAME=//' | tr -d \"
     # Manually install proprietary drivers
     software-properties-gtk --open-tab=4
     wait "$(pidof software-properties-gtk)"
-    confirmation ;;
+    ;;
   'Linux Mint')
     source ./modules/distributions/config_mint.sh
     config_mint
@@ -52,20 +52,19 @@ case $(cat /etc/*-release 2> /dev/null | grep ^NAME | sed 's/NAME=//' | tr -d \"
     until [[ $(pgrep mintdrivers | wc -l) == 0 ]] ; do
       sleep 1
     done
-    confirmation ;;
+    ;;
   'Fedora Linux' )
     source ./modules/distributions/config_fedora.sh
     config_fedora
-    confirmation ;;
+    ;;
 esac
 
 source ./modules/programs/config_firefox.sh
 config_firefox
 
-confirmation() {
-  notify-send --hint=int:transient:1 "Post-installation" "${message_confirmation}"
-  printf "%s\n" "${message_confirmation}"
-}
+
+notify-send --hint=int:transient:1 "Post-installation" "${message_confirmation}"
+printf "%s\n" "${message_confirmation}"
 
 exit 0
 
