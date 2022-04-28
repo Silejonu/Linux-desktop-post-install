@@ -6,7 +6,7 @@ Post-install script aimed at general-purpose desktop Linux distributions.
 cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/archive/refs/heads/main.zip && unzip main.zip && cd Linux-desktop-post-install-main && bash ./linux_desktop_post-install.sh
 ```
 
-## Goals of this script
+# Goals of this script
 - One-stop-script to configure a freshly installed Linux system.
 - The configuration is targeted towards non-technical users and Linux beginners (the typical target demographic is someone attending an install party).
 - As little manual intervention as possible, everything that can be automated will be automated.
@@ -16,7 +16,7 @@ cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/a
 - Accounts for localisation.
 - Should be ran just once right after a fresh install, but won't break anything if ran a thousand times.
 
-## What it actually does
+# What it actually does
 - Update the system
 - Install proprietary codecs, fonts and drivers
 - Add uBlock Origin to Mozilla Firefox
@@ -24,18 +24,18 @@ cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/a
 - Enable Timeshift on systems with more than 200GB of disk capacity
 - Enable the firewall
 
-### Currently supported distributions
+## Currently supported distributions
 - Ubuntu
 - Linux Mint
 
-### Currently supported desktop environments
+## Currently supported desktop environments
 - GNOME
 - Cinnamon
 - XFCE
 
 *The script will automatically detect the distribution and desktop environment, and will run the appropriate configuration.*
 
-## To-do
+# To-do
 
 - [ ] Support for Fedora Workstation
 - [ ] Automatically configure Linux Mint's mirrors (currently defaults to using mirrors in France)
