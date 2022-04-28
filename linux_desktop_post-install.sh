@@ -5,10 +5,7 @@ version='v0.2'
 if [[ $(locale language) == French ]] ; then
   source ./translations/fra.sh
 else
-  message_root='Error: do not run this script with superuser privileges.'
-  message_mintupdate='Starting updates…'
-  firefox_notification='Install uBlock Origin and allow it to run in private mode.'
-  message_confirmation='Post-install finished. Please reboot the computer.'
+  source ./translations/eng.sh
 fi
 
 if [[ ${UID} == 0 ]] ; then
