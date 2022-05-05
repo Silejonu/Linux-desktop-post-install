@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-version='v0.2'
+version='v0.2.1'
 
 if [[ $(locale language) == French ]] ; then
   source ./translations/fra.sh
