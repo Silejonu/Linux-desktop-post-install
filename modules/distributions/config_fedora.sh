@@ -1,4 +1,3 @@
-config_fedora() {
 ## Updates ##
 sudo dnf upgrade -y
 sudo dnf autoremove -y
@@ -33,4 +32,3 @@ sudo dnf install -y firewall-config -y
 if [[ $(lspci | grep -ci NVIDIA) -gt 0 ]] ; then
   sudo dnf install -y akmod-nvidia
 fi
-}

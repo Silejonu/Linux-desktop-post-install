@@ -15,35 +15,26 @@ fi
 
 case $(printf "%s" "${XDG_SESSION_DESKTOP}") in
   gnome|ubuntu)
-    source ./modules/desktop_environments/config_gnome.sh
-    config_gnome ;;
+    bash ./modules/desktop_environments/config_gnome.sh ;;
   cinnamon)
-    source ./modules/desktop_environments/config_cinnamon.sh
-    config_cinnamon ;;
+    bash ./modules/desktop_environments/config_cinnamon.sh ;;
   xfce|xubuntu)
-    source ./modules/desktop_environments/config_xfce.sh
-    config_xfce ;;
+    bash ./modules/desktop_environments/config_xfce.sh ;;
 esac
 
 case $(cat /etc/*-release 2> /dev/null | grep ^NAME | sed 's/NAME=//' | tr -d \"\') in
   Ubuntu)
-    source ./modules/distributions/config_ubuntu.sh
-    config_ubuntu
-    source ./modules/distributions/config_ubuntu_based.sh
-    config_ubuntu_based
-    source ./modules/programs/config_timeshift.sh
-    config_timeshift
+    bash ./modules/distributions/config_ubuntu.sh
+    bash ./modules/distributions/config_ubuntu_based.sh
+    bash ./modules/programs/config_timeshift.sh
     # Manually install proprietary drivers
     software-properties-gtk --open-tab=4
     wait "$(pidof software-properties-gtk)"
     ;;
   'Linux Mint')
-    source ./modules/distributions/config_mint.sh
-    config_mint
-    source ./modules/distributions/config_ubuntu_based.sh
-    config_ubuntu_based
-    source ./modules/programs/config_timeshift.sh
-    config_timeshift
+    bash ./modules/distributions/config_mint.sh
+    bash ./modules/distributions/config_ubuntu_based.sh
+    bash ./modules/programs/config_timeshift.sh
     # Manually install proprietary drivers
     nohup sudo mintdrivers &> /dev/null
     until [[ $(pgrep mintdrivers | wc -l) == 0 ]] ; do
@@ -51,13 +42,11 @@ case $(cat /etc/*-release 2> /dev/null | grep ^NAME | sed 's/NAME=//' | tr -d \"
     done
     ;;
   'Fedora Linux' )
-    source ./modules/distributions/config_fedora.sh
-    config_fedora
+    bash ./modules/distributions/config_fedora.sh
     ;;
 esac
 
-source ./modules/programs/config_firefox.sh
-config_firefox
+bash ./modules/programs/config_firefox.sh
 
 notify-send --hint=int:transient:1 "Post-installation" "${message_confirmation}"
 printf "%s\n" "${message_confirmation}"
