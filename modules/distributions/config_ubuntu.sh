@@ -8,6 +8,8 @@ sudo sed -i 's/enabled=1/enabled=0/' /etc/default/apport
 sudo apt update
 # Mettre à jour les paquets
 sudo apt upgrade -y
+# Install Firefox .deb to improve integration
+sudo apt install -y firefox
 # Installer les paquets propriétaires (codecs multimédias, pilotes wi-fi, etc.)
 echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
 sudo apt install -y ubuntu-restricted-extras
