@@ -10,6 +10,8 @@ sudo apt update
 sudo apt upgrade -y
 # Install Firefox .deb to improve integration
 sudo apt install -y firefox
+# Prevent wslu from installing to avoid bug https://bugs.launchpad.net/ubuntu/+source/wslu/+bug/1971757
+sudo apt-mark hold wslu
 # Installer les paquets propriétaires (codecs multimédias, pilotes wi-fi, etc.)
 echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
 sudo apt install -y ubuntu-restricted-extras
