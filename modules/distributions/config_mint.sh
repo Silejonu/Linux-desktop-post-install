@@ -1,9 +1,9 @@
 ## Gestionnaire de mises à jour ##
 # Change the mirrors
-notify-send --hint=int:transient:1 "Post-installation" "${message_mint_mirrors}"
+message "${message_mint_mirrors}"
 mintsources
 # Mettre à jour le gestionnaire de mises à jour…
-echo "${message_mintupdate}"
+message "${message_mintupdate}"
 sudo mintupdate-cli -ry upgrade
 # … et mettre à jour les paquets
 sudo mintupdate-cli -ry upgrade

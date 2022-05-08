@@ -2,17 +2,26 @@
 
 version='v0.2.1'
 
+# Determine the language of the messages
 if [[ $(locale language) == French ]] ; then
   source ./translations/fra.sh
 else
   source ./translations/eng.sh
 fi
 
+# Handle notifications and terminal prompts
+message() {
+  notify-send --hint=int:transient:1 "Post-installation" "${1}"
+  echo "${1}"
+}
+
+# Prevent running the script as root
 if [[ ${UID} == 0 ]] ; then
   echo "${message_root}"
   exit 1
 fi
 
+# Run the script for the appropriate desktop environment
 case $(printf "%s" "${XDG_SESSION_DESKTOP}") in
   gnome|ubuntu)
     bash ./modules/desktop_environments/config_gnome.sh ;;
@@ -22,6 +31,7 @@ case $(printf "%s" "${XDG_SESSION_DESKTOP}") in
     bash ./modules/desktop_environments/config_xfce.sh ;;
 esac
 
+# Run the script for the appropriate distribution
 case $(cat /etc/*-release 2> /dev/null | grep ^NAME | sed 's/NAME=//' | tr -d \"\') in
   Ubuntu)
     bash ./modules/distributions/config_ubuntu.sh
@@ -48,8 +58,7 @@ esac
 
 bash ./modules/programs/config_firefox.sh
 
-notify-send --hint=int:transient:1 "Post-installation" "${message_confirmation}"
-printf "%s\n" "${message_confirmation}"
+message "${message_confirmation}"
 
 exit 0
 

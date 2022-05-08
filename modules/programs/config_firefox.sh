@@ -1,6 +1,5 @@
 ## Firefox ##
-notify-send --hint=int:transient:1 "Post-installation" "${firefox_notification}"
-printf "%s\n" "${firefox_notification}"
+message "${message_ublock_origin}"
 # Ouvrir Firefox sur la page d’installation d’uBlock Origin
 firefox https://addons.mozilla.org/firefox/addon/ublock-origin/ &
 # Attendre que Firefox soit fermé avant de continuer
