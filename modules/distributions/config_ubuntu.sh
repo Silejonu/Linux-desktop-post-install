@@ -1,6 +1,8 @@
 ## Interface ##
 # Cacher le répertoire « snap » situé dans le dossier home
 grep -qx snap ~/.hidden &> /dev/null || echo snap >> ~/.hidden
+# Hide "firefox.tmp" in the Downloads directory
+grep -qx firefox.tmp $(xdg-user-dir DOWNLOAD)/.hidden &> /dev/null || echo firefox.tmp >> $(xdg-user-dir DOWNLOAD)/.hidden
 # Désactiver les messages d'erreur lorsqu'une application malfonctionne en arrière-plan
 sudo sed -i 's/enabled=1/enabled=0/' /etc/default/apport
 ## Gestionnaire de paquets ##
