@@ -24,27 +24,27 @@ fi
 # Run the script for the appropriate desktop environment
 case $(printf "%s" "${XDG_SESSION_DESKTOP}") in
   gnome|ubuntu)
-    bash ./modules/desktop_environments/config_gnome.sh ;;
+    source ./modules/desktop_environments/config_gnome.sh ;;
   cinnamon)
-    bash ./modules/desktop_environments/config_cinnamon.sh ;;
+    source ./modules/desktop_environments/config_cinnamon.sh ;;
   xfce|xubuntu)
-    bash ./modules/desktop_environments/config_xfce.sh ;;
+    source ./modules/desktop_environments/config_xfce.sh ;;
 esac
 
 # Run the script for the appropriate distribution
 case $(cat /etc/*-release 2> /dev/null | grep ^NAME | sed 's/NAME=//' | tr -d \"\') in
   Ubuntu)
-    bash ./modules/distributions/config_ubuntu.sh
-    bash ./modules/distributions/config_ubuntu_based.sh
-    bash ./modules/programs/config_timeshift.sh
+    source ./modules/distributions/config_ubuntu.sh
+    source ./modules/distributions/config_ubuntu_based.sh
+    source ./modules/programs/config_timeshift.sh
     # Manually install proprietary drivers
     software-properties-gtk --open-tab=4
     wait "$(pidof software-properties-gtk)"
     ;;
   'Linux Mint')
-    bash ./modules/distributions/config_mint.sh
-    bash ./modules/distributions/config_ubuntu_based.sh
-    bash ./modules/programs/config_timeshift.sh
+    source ./modules/distributions/config_mint.sh
+    source ./modules/distributions/config_ubuntu_based.sh
+    source ./modules/programs/config_timeshift.sh
     # Manually install proprietary drivers
     nohup sudo mintdrivers &> /dev/null
     until [[ $(pgrep mintdrivers | wc -l) == 0 ]] ; do
@@ -52,11 +52,11 @@ case $(cat /etc/*-release 2> /dev/null | grep ^NAME | sed 's/NAME=//' | tr -d \"
     done
     ;;
   'Fedora Linux' )
-    bash ./modules/distributions/config_fedora.sh
+    source ./modules/distributions/config_fedora.sh
     ;;
 esac
 
-bash ./modules/programs/config_firefox.sh
+source ./modules/programs/config_firefox.sh
 
 message "${message_confirmation}"
 
