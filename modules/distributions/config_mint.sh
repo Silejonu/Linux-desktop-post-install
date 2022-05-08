@@ -1,7 +1,7 @@
 ## Gestionnaire de mises à jour ##
-# Changer les miroirs
-sudo sed -i s,http://packages.linuxmint.com,http://mirror6.layerjet.com/linuxmint/packages,g /etc/apt/sources.list.d/official-package-repositories.list
-sudo sed -i s,http://archive.ubuntu.com/ubuntu,http://distrib-coffee.ipsl.jussieu.fr/pub/linux/ubuntu,g /etc/apt/sources.list.d/official-package-repositories.list
+# Change the mirrors
+mintsources
+notify-send --hint=int:transient:1 "Post-installation" "${message_mint_mirrors}"
 # Mettre à jour le gestionnaire de mises à jour…
 echo "${message_mintupdate}"
 sudo mintupdate-cli -ry upgrade
