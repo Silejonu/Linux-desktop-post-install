@@ -5,6 +5,8 @@ flatpak update -y
 flatpak remove -y --unused
 # Add Flathub
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+# Autoselect RPM packages instead of Flatpaks in GNOME Software
+gsettings set org.gnome.software packaging-format-preference "['RPM', 'flatpak']"
 
 ## RPMFusion ##
 # Enable RPMFusion free and nonfree
