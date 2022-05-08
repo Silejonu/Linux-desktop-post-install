@@ -3,9 +3,9 @@
 version='v0.2.1'
 
 if [[ $(locale language) == French ]] ; then
-  source translations/fra.sh
+  source ./translations/fra.sh
 else
-  source translations/eng.sh
+  source ./translations/eng.sh
 fi
 
 if [[ ${UID} == 0 ]] ; then
