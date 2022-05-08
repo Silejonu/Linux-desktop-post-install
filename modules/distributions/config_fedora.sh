@@ -28,7 +28,7 @@ sudo dnf install -y \*-firmware
 
 ## Additional software ##
 sudo dnf install -y htop
-sudo dnf install -y firewall-config -y
+sudo dnf install -y firewall-config
 
 ## Nvidia ##
 if [[ $(lspci | grep -ci NVIDIA) -gt 0 ]] ; then
