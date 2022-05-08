@@ -1,3 +1,5 @@
+# This is basically a notepad for me to remember things I may implement, or regularly need to manually do.
+
 ### Facultatif ###
 
 ### Pour les ordinateurs disposant de 3 Go de mémoire vive ou moins ###
