@@ -17,7 +17,7 @@ message() {
 
 # Prevent running the script as root
 if [[ ${UID} == 0 ]] ; then
-  echo "${message_root}"
+  message "${message_root}"
   exit 1
 fi
 
