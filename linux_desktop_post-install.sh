@@ -53,7 +53,7 @@ case $(cat /etc/*-release 2> /dev/null | grep ^NAME | sed 's/NAME=//' | tr -d \"
       sleep 1
     done
     ;;
-  'Fedora Linux' )
+  'Fedora Linux')
     source ./modules/distributions/config_fedora.sh
     ;;
 esac
