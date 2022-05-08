@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-version='v0.2.1'
+version='v0.2.2'
 
 # Determine the language of the messages
 if [[ $(locale language) == French ]] ; then
@@ -38,6 +38,7 @@ case $(cat /etc/*-release 2> /dev/null | grep ^NAME | sed 's/NAME=//' | tr -d \"
     source ./modules/distributions/config_ubuntu_based.sh
     source ./modules/programs/config_timeshift.sh
     # Manually install proprietary drivers
+    message "${message_install_proprietary_drivers}"
     software-properties-gtk --open-tab=4
     wait "$(pidof software-properties-gtk)"
     ;;
@@ -46,6 +47,7 @@ case $(cat /etc/*-release 2> /dev/null | grep ^NAME | sed 's/NAME=//' | tr -d \"
     source ./modules/distributions/config_ubuntu_based.sh
     source ./modules/programs/config_timeshift.sh
     # Manually install proprietary drivers
+    message "${message_install_proprietary_drivers}"
     nohup sudo mintdrivers &> /dev/null
     until [[ $(pgrep mintdrivers | wc -l) == 0 ]] ; do
       sleep 1
