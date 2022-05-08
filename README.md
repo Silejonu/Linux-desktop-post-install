@@ -39,5 +39,5 @@ cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/a
 # To-do
 
 - [x] Support for Fedora Workstation
-- [ ] Automatically configure Linux Mint's mirrors (currently defaults to using mirrors in France) [probably not feasible]
+- [ ] Automatically configure Linux Mint's mirrors (probably not feasible)
 - [ ] Comments cleanup / translation
