@@ -9,6 +9,7 @@ gsettings set org.gnome.nautilus.preferences recursive-search always
 gsettings set org.gnome.nautilus.preferences show-directory-item-counts always
 # En mode liste, afficher les colonnes Nom, Taille, Type, Dernière modification & Favori
 gsettings set org.gnome.nautilus.list-view default-visible-columns "['name', 'size', 'type', 'date_modified', 'starred']"
+
 ## Interface ##
 # Afficher le jour de la semaine dans l'horloge
 gsettings set org.gnome.desktop.interface clock-show-weekday true
@@ -21,3 +22,7 @@ gsettings set org.gnome.desktop.session idle-delay 900
 gsettings set org.gnome.desktop.privacy remove-old-trash-files true
 # Supprimer automatiquement les fichiers temporaires (au bout de 30 jours par défaut)
 gsettings set org.gnome.desktop.privacy remove-old-temp-files true
+
+## Peripherals ##
+# Enable tap-to-clik on the touchpad
+gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
