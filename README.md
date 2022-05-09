@@ -11,7 +11,7 @@ cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/a
 - The configuration is targeted towards non-technical users and Linux beginners (the typical target demographic is someone attending an install party).
 - As little manual intervention as possible, everything that can be automated will be automated.
 - If it can't be automated, the program needing to be configured will open itself, a notification will tell you what to do, and the script will proceed after the program is closed.
-- Targets the latest *(LTS, if applicable)* release of a given distro. Older releases *should* work, but there is no guarantee.
+- Targets the latest *(LTS, if applicable)* release of a given distro. Older and newer releases *should* work, but there is no guarantee.
 - Every change done to the default distribution configuration is meant to improve user-friendliness, and does not include purely personal preferences.
 - Accounts for localisation.
 - Should be ran just once right after a fresh install, but won't break anything if ran a thousand times.
