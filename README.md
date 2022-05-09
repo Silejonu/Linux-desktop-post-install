@@ -21,7 +21,7 @@ cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/a
 - Install proprietary codecs, fonts and drivers
 - Add uBlock Origin to Mozilla Firefox
 - Small tweaks to the desktop environment aimed at better user-friendliness/cleaner UI
-- Enable Timeshift on systems with more than 200GB of disk capacity
+- Enable Timeshift on Ubuntu-based systems with more than 200GB of disk capacity
 - Enable the firewall
 
 ## Currently supported distributions
