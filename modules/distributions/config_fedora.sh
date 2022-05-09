@@ -29,6 +29,9 @@ sudo dnf install -y \*-firmware
 ## Additional software ##
 sudo dnf install -y htop
 sudo dnf install -y firewall-config
+# Install Microsoft fonts
+sudo dnf install -y cabextract xorg-x11-font-utils
+sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
 ## Nvidia ##
 if [[ $(lspci | grep -ci NVIDIA) -gt 0 ]] ; then
