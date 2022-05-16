@@ -3,8 +3,10 @@ sudo dnf upgrade -y
 sudo dnf autoremove -y
 flatpak update -y
 flatpak remove -y --unused
+# Circumvent https://github.com/flatpak/flatpak/issues/4831
+sudo flatpak remote-modify flathub --title Flathub --comment "Central repository of Flatpak applications" --description "Central repository of Flatpak applications"
 # Add Flathub
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 # Autoselect RPM packages instead of Flatpaks in GNOME Software
 gsettings set org.gnome.software packaging-format-preference "['RPM', 'flatpak']"
 
@@ -32,6 +34,10 @@ sudo dnf install -y firewall-config
 # Install Microsoft fonts
 sudo dnf install -y cabextract xorg-x11-font-utils
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+# Install GNOME Extension manager if applicable
+if [[ $(printf "%s" "${XDG_SESSION_DESKTOP}") == 'gnome' ]] ; then
+  flatpak install -y com.mattjakeman.ExtensionManager
+fi
 
 ## Nvidia ##
 if [[ $(lspci | grep -ci NVIDIA) -gt 0 ]] ; then
