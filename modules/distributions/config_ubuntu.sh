@@ -24,3 +24,7 @@ sudo DEBIAN_FRONTEND=noninteractive dpkg-reconfigure libdvd-pkg
 sudo apt install -y gufw
 # Install Firefox .deb package to circumvent this bug: https://www.reddit.com/r/Ubuntu/comments/uj3x52/psa_fix_filesdirectories_on_the_desktop_not/
 sudo apt install -y firefox
+# Change the favourites in Dash-to-Dock
+if [[ $(printf "%s" "${XDG_SESSION_DESKTOP}") == 'ubuntu' ]] ; then
+  gsettings set org.gnome.shell favorite-apps "['firefox_firefox.desktop', 'org.gnome.Nautilus.desktop', 'libreoffice-startcenter.desktop', 'rhythmbox.desktop', 'snap-store_ubuntu-software.desktop', 'yelp.desktop']"
+fi
