@@ -4,7 +4,7 @@ sudo dnf autoremove -y
 flatpak update -y
 flatpak remove -y --unused
 # Circumvent https://github.com/flatpak/flatpak/issues/4831
-sudo flatpak remote-modify flathub --title Flathub --comment "Central repository of Flatpak applications" --description "Central repository of Flatpak applications"
+sudo flatpak remote-delete flathub
 # Add Flathub
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 # Autoselect RPM packages instead of Flatpaks in GNOME Software
