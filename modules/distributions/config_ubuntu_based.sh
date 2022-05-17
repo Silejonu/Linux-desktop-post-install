@@ -1,11 +1,8 @@
-## Sécurité & confidentialité ##
-# Activer le pare-feu
+# Enable firewall
 sudo ufw enable
-## Gestionnaire de paquets ##
-# Installer le gestionnaire de tâches htop
-sudo apt install -y htop
-# Installer les paquets de langues manquants
+
+# Install localisation packages
 sudo apt install -y language-selector-common
 sudo apt install -y $(check-language-support)
-# Supprimer les paquets obsolètes
+# Remove obsolete packages
 sudo apt autoremove -y
