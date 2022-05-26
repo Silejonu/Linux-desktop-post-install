@@ -1,5 +1,4 @@
 message_root='Erreur : ce script ne doit pas être exécuté avec les privilèges super-utilisateur.'
-message_mintupdate='Démarrage des mises à jour…'
 message_ublock_origin='Installer uBlock Origin et l’autoriser en mode navigation privée.'
 message_confirmation='Post-installation terminée. Merci de redémarrer l’ordinateur.'
 message_mint_mirrors='Sélectionner un miroir local.'
