@@ -25,6 +25,8 @@ preferences=(
   'user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2", true);'
   # Hide titlebar
   'user_pref("browser.tabs.inTitlebar", 1);'
+  # Remove shortcuts in new tab page
+  'user_pref("browser.newtabpage.pinned", "[]");'
 )
 
 # Check each setting
@@ -45,4 +47,4 @@ done
 # Remove "Import bookmarks from another browser to Firefox." button
 sed -i 's/\\"import-button\\",//' "${preferences_file}"
 # Remove shortcuts in new tab page
-sed -i 's/browser.newtabpage.pinned//' "${preferences_file}"
+#sed -i 's/browser.newtabpage.pinned//' "${preferences_file}"
