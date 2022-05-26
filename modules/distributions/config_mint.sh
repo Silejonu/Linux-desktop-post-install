@@ -1,19 +1,19 @@
-## Gestionnaire de mises à jour ##
+## Package management ##
 # Change the mirrors
 message "${message_mint_mirrors}"
 mintsources
-# Mettre à jour le gestionnaire de mises à jour…
+# Update the package manager…
 message "${message_mintupdate}"
 sudo mintupdate-cli -ry upgrade
-# … et mettre à jour les paquets
+# … then upgrade the packages
 sudo mintupdate-cli -ry upgrade
-# Installer les paquets propriétaires
+# Install proprietary software/codecs
 sudo apt install -y mint-meta-codecs
-# Installer numlockx pour pouvoir activer automatiquement le verrouillage numérique au démarrage de la session
+# Install numlockx for automatic numlock support (needs to be enabled by the user)
 sudo apt install -y numlockx
-# Mettre à jour les composants Cinnamon automatiquement
+# Automatically update Cinnamon components
 gsettings set com.linuxmint.updates auto-update-cinnamon-spices true
-# Mettre à jour les Flatpaks automatiquement
+# Automatically update Flatpaks
 gsettings set com.linuxmint.updates auto-update-flatpaks true
-# Retirer les noyaux obsolètes et leurs dépendances automatiquement
+# Automatically purge old kernels
 sudo systemctl enable mintupdate-automation-autoremove.timer
