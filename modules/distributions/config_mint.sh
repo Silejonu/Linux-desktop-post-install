@@ -3,7 +3,6 @@
 message "${message_mint_mirrors}"
 mintsources
 # Update the package manager…
-message "${message_mintupdate}"
 sudo mintupdate-cli -ry upgrade
 # … then upgrade the packages
 sudo mintupdate-cli -ry upgrade
