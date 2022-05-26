@@ -44,4 +44,5 @@ cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/a
 - [x] Comments cleanup / translation
 - [ ] Translate text with `gettext`
 - [ ] Automatically set the correct application to open WEBP files on Fedora GNOME & XFCE
+- [ ] Install iFuse for distributions that require it
 - [ ] Automatically configure Linux Mint's mirrors (probably not feasible)
