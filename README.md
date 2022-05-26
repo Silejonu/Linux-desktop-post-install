@@ -15,6 +15,7 @@ cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/a
 - Targets the latest *(LTS, if applicable)* release of a given distro. Older and newer releases *should* work, but there is no guarantee.
 - Every change done to the default distribution configuration is meant to improve user-friendliness, and does not include purely personal preferences.
 - Accounts for localisation.
+- Everything in the script is clearly commented so one can know what the script does before running it.
 - Circumvents bugs in the distributions/desktop environments. [[1]](https://github.com/flatpak/flatpak/issues/4831) [[2]](https://bugs.launchpad.net/ubuntu/+source/wslu/+bug/1971757)
 
 # What it actually does
