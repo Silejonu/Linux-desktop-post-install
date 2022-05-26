@@ -31,8 +31,10 @@ sudo dnf install -y \*-firmware
 ## Additional software ##
 # Firewall GUI
 sudo dnf install -y firewall-config
-# WEBP images support
-sudo dnf install -y webp-pixbuf-loader
+# Install WEBP images support for desktop environments lack it by default
+case $(printf "%s" "${XDG_SESSION_DESKTOP}") in
+  gnome|cinnamon|xfce) sudo dnf install -y webp-pixbuf-loader ;;
+esac
 # Microsoft fonts
 sudo dnf install -y cabextract xorg-x11-font-utils
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
