@@ -36,10 +36,10 @@ sudo dnf install -y webp-pixbuf-loader
 # Microsoft fonts
 sudo dnf install -y cabextract xorg-x11-font-utils
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
-# Install GNOME Extension manager & File Roller if applicable
+# Install GNOME Extension manager if applicable
 if [[ $(printf "%s" "${XDG_SESSION_DESKTOP}") == 'gnome' ]] ; then
   flatpak install -y com.mattjakeman.ExtensionManager
-  sudo dnf install -y file-roller file-roller-nautilus
+  #sudo dnf install -y file-roller file-roller-nautilus
 fi
 
 ## Nvidia ##
