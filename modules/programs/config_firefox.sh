@@ -47,4 +47,4 @@ done
 # Remove "Import bookmarks from another browser to Firefox." button
 sed -i 's/\\"import-button\\",//' "${preferences_file}"
 # Remove shortcuts in new tab page
-#sed -i 's/browser.newtabpage.pinned//' "${preferences_file}"
+sed -i 's/browser.newtabpage.pinned//' "${preferences_file}"
