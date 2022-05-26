@@ -40,8 +40,6 @@ cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/a
 
 # To-do
 
-- [x] Support for Fedora Workstation
-- [x] Comments cleanup / translation
 - [ ] Translate text with `gettext`
 - [ ] Automatically set the correct application to open WEBP files on Fedora GNOME & XFCE
 - [ ] Automatically configure Linux Mint's mirrors (probably not feasible)
