@@ -1,15 +1,15 @@
 ## Interface ##
-# Afficher le dossier utilisateur sur le bureau
+# Hide the home folder from the desktop
 xfconf-query --channel xfce4-desktop --property /desktop-icons/file-icons/show-home --type bool --set "true"
-# Afficher la corbeille sur le bureau
+# Show the trash bin to the desktop
 xfconf-query --channel xfce4-desktop --property /desktop-icons/file-icons/show-trash --type bool --set "true"
-# Afficher les périphériques amovibles sur le bureau
+# Show peripherals on the desktop
 xfconf-query --channel xfce4-desktop --property /desktop-icons/file-icons/show-removable --type bool --set "true"
-# Cache le système de fichier sur le bureau
+# Hide the filesystem from the desktop
 xfconf-query --channel xfce4-desktop --property /desktop-icons/file-icons/show-filesystem --type bool --set "false"
-# Afficher la date dans le tableau de bord
+# Show date in the taskbar
 xfconf-query --channel xfce4-panel --property $(xfconf-query -l --channel xfce4-panel | grep digital-format) --type string --set "%A %d %B %H:%M"
-# Cacher l’ordinateur et le système de fichiers dans Thunar
+# Hide Computer and filesystem from Thunar's sidebar
 xfconf-query --channel thunar --property /hidden-bookmarks --create --type string --set "computer:///" --type string --set "file:///" --force-array
-# Organiser les icônes du bureau
+# Rearrange desktop icons
 xfdesktop --arrange
