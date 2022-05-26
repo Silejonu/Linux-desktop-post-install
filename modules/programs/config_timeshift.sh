@@ -1,13 +1,12 @@
-## Sauvegardes du système avec Timeshift ##
-# Noter la taille du disque dur
-taille_disque=$(df --output=size / | tail -1)
-# Si le disque dur fait plus de 200 Go, alors…
-if (( ${taille_disque} > 209715200 )) ; then
-  # Installer Timeshift
+## System backups with Timeshift ##
+# Check disk size
+disk_size=$(df --output=size / | tail -1)
+# If disk is bigger than 200 GB, then install Timeshift…
+if (( ${disk_size} > 209715200 )) ; then
   sudo apt install -y timeshift
-  # Lancer Timeshift mensuellement, et conserver les 2 snapshots les plus récents
-  # sauvegarder tous les fichiers dans /
-  # sauvegarder uniquement les fichiers cachés dans ~
+  # … and run it weekly while keepin the two newest snapshots
+  # backup all files from /
+  # backup hidden files from ~
 sudo tee /etc/timeshift.json << EOF > /dev/null
 {
   "backup_device_uuid" : "$(findmnt / -o UUID -n)",
@@ -39,7 +38,7 @@ sudo tee /etc/timeshift.json << EOF > /dev/null
   ]
 }
 EOF
+# If the disk is smaller than 200 GB, remove Timeshift
 else
-  # Désinstaller Timeshift
   sudo apt purge -y timeshift
 fi
