@@ -2,11 +2,11 @@
 # Change the mirrors
 message "${message_mint_mirrors}"
 mintsources
-# Update the package manager…
+# Upgrade the Update Manager…
 sudo mintupdate-cli -ry upgrade
 # … then upgrade the packages
 sudo mintupdate-cli -ry upgrade
-# Install proprietary software/codecs
+# Install proprietary codecs
 sudo apt install -y mint-meta-codecs
 # Install numlockx for automatic numlock support (needs to be enabled by the user)
 sudo apt install -y numlockx
