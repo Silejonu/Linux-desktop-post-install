@@ -16,7 +16,8 @@ preferences=(
   # Use OS settings for the locale
   'user_pref("intl.regional_prefs.use_os_locales", true);'
   # Unpin sponsored search engines on new tab page
-  'user_pref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "amazon");'
+  'user_pref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "");'
+  #'user_pref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "amazon");'
   # Do not show sponsored websites on new tab page
   'user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);'
   # Enable standard Enhanced Tracking Protection
