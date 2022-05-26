@@ -15,6 +15,7 @@ cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/a
 - Every change done to the default distribution configuration is meant to improve user-friendliness, and does not include purely personal preferences.
 - Accounts for localisation.
 - Should be ran just once right after a fresh install, but won't break anything if ran a thousand times.
+- Circumvents bugs in the distributions/desktop environments. [[1]](https://github.com/flatpak/flatpak/issues/4831) [[2]](https://bugs.launchpad.net/ubuntu/+source/wslu/+bug/1971757)
 
 # What it actually does
 - Update the system
