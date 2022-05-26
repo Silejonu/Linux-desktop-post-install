@@ -17,10 +17,10 @@ gsettings set org.gnome.desktop.interface show-battery-percentage true
 ## Security & privacy ##
 # Set sleep delay to 15 minutes
 gsettings set org.gnome.desktop.session idle-delay 900
-# Automatically delete old trash files (after 30 days by default)
-gsettings set org.gnome.desktop.privacy remove-old-trash-files true
 # Automatically delete temporary files (after 30 days by default)
 gsettings set org.gnome.desktop.privacy remove-old-temp-files true
+# Automatically delete old trash files (after 30 days by default)
+gsettings set org.gnome.desktop.privacy remove-old-trash-files true
 
 ## Peripherals ##
 # Enable tap-to-clik on the touchpad
