@@ -29,8 +29,11 @@ sudo dnf install -y rpmfusion-nonfree-release-tainted
 sudo dnf install -y \*-firmware
 
 ## Additional software ##
+# Firewall GUI
 sudo dnf install -y firewall-config
-# Install Microsoft fonts
+# WEBP images support
+sudo dnf install -y webp-pixbuf-loader
+# Microsoft fonts
 sudo dnf install -y cabextract xorg-x11-font-utils
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 # Install GNOME Extension manager if applicable
