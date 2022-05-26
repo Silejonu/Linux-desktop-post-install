@@ -5,6 +5,10 @@ grep -qx snap ~/.hidden &> /dev/null || echo snap >> ~/.hidden
 grep -qx firefox.tmp $(xdg-user-dir DOWNLOAD)/.hidden &> /dev/null || echo firefox.tmp >> $(xdg-user-dir DOWNLOAD)/.hidden
 # Disable error messages when an application crashes
 sudo sed -i 's/enabled=1/enabled=0/' /etc/default/apport
+# Change the favourites in Dash-to-Dock
+if [[ $(printf "%s" "${XDG_SESSION_DESKTOP}") == 'ubuntu' ]] ; then
+  gsettings set org.gnome.shell favorite-apps "['firefox_firefox.desktop', 'org.gnome.Nautilus.desktop', 'libreoffice-startcenter.desktop', 'rhythmbox.desktop', 'snap-store_ubuntu-software.desktop', 'yelp.desktop']"
+fi
 
 ## Package management ##
 # Update the database
@@ -23,7 +27,5 @@ sudo DEBIAN_FRONTEND=noninteractive apt install -y libdvd-pkg
 sudo DEBIAN_FRONTEND=noninteractive dpkg-reconfigure libdvd-pkg
 # Install firewall GUI
 sudo apt install -y gufw
-# Change the favourites in Dash-to-Dock
-if [[ $(printf "%s" "${XDG_SESSION_DESKTOP}") == 'ubuntu' ]] ; then
-  gsettings set org.gnome.shell favorite-apps "['firefox_firefox.desktop', 'org.gnome.Nautilus.desktop', 'libreoffice-startcenter.desktop', 'rhythmbox.desktop', 'snap-store_ubuntu-software.desktop', 'yelp.desktop']"
-fi
+# iOS devices filesystem support
+sudo apt install -y ifuse
