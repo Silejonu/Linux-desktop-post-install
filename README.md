@@ -25,6 +25,7 @@ cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/a
 - Small tweaks to the desktop environment aimed at better user-friendliness/cleaner UI
 - Enable Timeshift on Ubuntu-based systems with more than 200GB of disk capacity
 - Enable the firewall
+- And more!
 
 ## Currently supported distributions
 - Ubuntu
