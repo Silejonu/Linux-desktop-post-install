@@ -15,7 +15,7 @@ sudo apt-mark hold wslu
 sudo apt upgrade -y
 # Install Firefox .deb to improve integration
 sudo apt install -y firefox
-# Install proprietary software and codecs
+# Install proprietary codecs
 echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
 sudo apt install -y ubuntu-restricted-extras
 # Install DVD support
