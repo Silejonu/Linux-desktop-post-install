@@ -1,48 +1,48 @@
-## Firefox ##
+# Install uBlock Origin
 message "${message_ublock_origin}"
-# Ouvrir Firefox sur la page d’installation d’uBlock Origin
 firefox https://addons.mozilla.org/firefox/addon/ublock-origin/ &
-# Attendre que Firefox soit fermé avant de continuer
 wait $(pidof firefox)
-# Identifier le répertoire du profil principal de Firefox
-fichier_preferences="$(find ${HOME}/.mozilla/firefox -iname *default-release*)/prefs.js"
+
+# Find Firefox's preferences file
+preferences_file="$(find ${HOME}/.mozilla/firefox -iname *default-release*)/prefs.js"
 if [[ -d ${HOME}/snap/firefox ]] ; then
-  fichier_preferences="$(find ${HOME}/snap/firefox/common/.mozilla/firefox -iname *default | head -n1)/prefs.js"
+  preferences_file="$(find ${HOME}/snap/firefox/common/.mozilla/firefox -iname *default | head -n1)/prefs.js"
 fi
-# Définir les préférences à modifier
+
+# Determine the preferences that should be changed
 preferences=(
-  # Désactiver l’extension Pocket
+  # Disable the Pocket extension
   'user_pref("extensions.pocket.enabled", false);'
-  # Utiliser les paramètres du système d’exploitation pour la locale
+  # Use OS settings for the locale
   'user_pref("intl.regional_prefs.use_os_locales", true);'
-  # Désépingler les moteurs de recherche
+  # Unpin sponsored search engines on new tab page
   'user_pref("browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts.havePinned", "amazon");'
-  # Ne pas afficher les raccourcis sponsorisés dans les nouveaux onglet
+  # Do not show sponsored websites on new tab page
   'user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);'
-  # Protection renforcée contre le pistage = Standard
+  # Enable standard Enhanced Tracking Protection
   'user_pref("browser.contentblocking.category", standard);'
-  # Autoriser Firefox à envoyer des rapports de plantage en attente en votre nom
+  # Allow Firefox to send backlogged crash reports on your behalf
   'user_pref("browser.crashReports.unsubmittedCheck.autoSubmit2", true);'
-  # Ne pas afficher la barre de titre
+  # Hide titlebar
   'user_pref("browser.tabs.inTitlebar", 1);'
-  # Désépingler les raccourcis dans les nouveaux onglets
-  #'user_pref("browser.newtabpage.pinned", []);'
 )
-# Vérifier chaque paramètre un à un
-for ligne in "${preferences[@]}" ; do
-  # Enregistrer l’intitulé nu des paramètres dans la variable « option »
-  option=$(printf "${ligne}" | cut -d'"' -f2)
-  # Chercher quelles options existent déjà dans le fichier de configuration
-  option_existe=$(grep -sc "${option}" "${fichier_preferences}")
-  # Si une option existe déjà, alors remplacer la ligne…
-  if [[ "${option_existe}" -ne 0 ]] ; then
-    sed -i 's/*${option}*/${ligne}/' "${fichier_preferences}"
-    # … sinon, la créer
+
+# Check each setting
+for line in "${preferences[@]}" ; do
+  # Save the setting's name
+  option=$(printf "${line}" | cut -d'"' -f2)
+  # Check if the settings is already set…
+  option_exists=$(grep -sc "${option}" "${preferences_file}")
+  # … and replace it by the chosen value…
+  if [[ "${option_exists}" -ne 0 ]] ; then
+    sed -i 's/*${option}*/${line}/' "${preferences_file}"
+  # … or create it if it doesn't exist
   else
-    echo "${ligne}" >> "${fichier_preferences}"
+    echo "${line}" >> "${preferences_file}"
   fi
 done
-# Enlever le bouton « Importer les marques-pages d’un autre navigateur dans Firefox. »
-sed -i 's/\\"import-button\\",//' "${fichier_preferences}"
-# Désépingler les raccourcis dans les nouveaux onglets
-sed -i 's/browser.newtabpage.pinned//' "${fichier_preferences}"
+
+# Remove "Import data from other browser" button
+sed -i 's/\\"import-button\\",//' "${preferences_file}"
+# Unpin shortcuts in new tab page
+sed -i 's/browser.newtabpage.pinned//' "${preferences_file}"
