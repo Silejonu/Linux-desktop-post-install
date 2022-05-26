@@ -31,14 +31,18 @@ sudo dnf install -y \*-firmware
 ## Additional software ##
 # Firewall GUI
 sudo dnf install -y firewall-config
+# Microsoft fonts
+sudo dnf install -y cabextract xorg-x11-font-utils
+sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 # Install WEBP images support for desktop environments lack it by default
 case $(printf "%s" "${XDG_SESSION_DESKTOP}") in
   gnome|cinnamon|xfce) sudo dnf install -y webp-pixbuf-loader ;;
 esac
-# Microsoft fonts
-sudo dnf install -y cabextract xorg-x11-font-utils
-sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
-# Install GNOME Extension manager if applicable
+# Install .rar archive support for desktop environments lack it by default
+case $(printf "%s" "${XDG_SESSION_DESKTOP}") in
+  xfce) sudo dnf install -y unrar ;;
+esac
+# Install GNOME Extension manager for GNOME
 if [[ $(printf "%s" "${XDG_SESSION_DESKTOP}") == 'gnome' ]] ; then
   flatpak install -y com.mattjakeman.ExtensionManager
   #sudo dnf install -y file-roller file-roller-nautilus
