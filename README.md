@@ -41,5 +41,8 @@ cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/a
 # To-do
 
 - [x] Support for Fedora Workstation
-- [ ] Automatically configure Linux Mint's mirrors (probably not feasible)
 - [ ] Comments cleanup / translation
+- [ ] Translate text with `gettext`
+- [ ] Install `webp-pixbuf-loader` only desktops that require it for Fedora
+- [ ] Automatically set the correct application to open WEBP files on Fedora
+- [ ] Automatically configure Linux Mint's mirrors (probably not feasible)
