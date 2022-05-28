@@ -1,10 +1,4 @@
 ## Files (Nautilus) ##
-# Show thumbnails for all files
-gsettings set org.gnome.nautilus.preferences show-image-thumbnails always
-# Always search in subfolders
-gsettings set org.gnome.nautilus.preferences recursive-search always
-# Count number of files in folders for all folders
-gsettings set org.gnome.nautilus.preferences show-directory-item-counts always
 # Show columns Name, Size, Type, Date modified & Starred in list view
 gsettings set org.gnome.nautilus.list-view default-visible-columns "['name', 'size', 'type', 'date_modified', 'starred']"
 
