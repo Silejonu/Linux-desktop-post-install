@@ -1,7 +1,3 @@
-## Files (Nautilus) ##
-# Show columns Name, Size, Type, Date modified & Starred in list view
-gsettings set org.gnome.nautilus.list-view default-visible-columns "['name', 'size', 'type', 'date_modified', 'starred']"
-
 ## Interface ##
 # Show weekday in the clock
 gsettings set org.gnome.desktop.interface clock-show-weekday true
