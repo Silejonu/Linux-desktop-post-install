@@ -36,11 +36,11 @@ sudo dnf install -y ifuse
 # Microsoft fonts
 sudo dnf install -y cabextract xorg-x11-font-utils
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
-# Install WEBP images support for desktop environments lack it by default
+# Install WEBP images support for desktop environments which lack it by default
 case $(printf "%s" "${XDG_SESSION_DESKTOP}") in
   gnome|cinnamon|xfce) sudo dnf install -y webp-pixbuf-loader ;;
 esac
-# Install .rar archive support for desktop environments lack it by default
+# Install .rar archive support for desktop environments which lack it by default
 case $(printf "%s" "${XDG_SESSION_DESKTOP}") in
   xfce) sudo dnf install -y unrar ;;
 esac
