@@ -26,7 +26,7 @@ case $(cat /etc/*-release 2> /dev/null | grep ^NAME | sed 's/NAME=//' | tr -d \"
 esac
 # Add the Appstream metadata
 sudo dnf groupupdate -y core
-# Install the complements multimedia packages needed by gstreamer enabled applications
+# Install the multimedia packages needed by gstreamer enabled applications
 sudo dnf groupupdate -y multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 # Install the sound-and-video complement packages needed by some applications
 sudo dnf groupupdate -y sound-and-video
