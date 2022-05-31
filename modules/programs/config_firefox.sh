@@ -2,6 +2,7 @@
 message "${message_ublock_origin}"
 firefox https://addons.mozilla.org/firefox/addon/ublock-origin/ &
 wait $(pidof firefox)
+sleep 10
 
 # Find Firefox's preferences file
 preferences_file="$(find ${HOME}/.mozilla/firefox -iname *default-release*)/prefs.js"
