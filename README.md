@@ -36,7 +36,7 @@ bash ./linux_desktop_post-install.sh
 - Ubuntu LTS
 - Linux Mint
 - Fedora Workstation
-- CentOS Stream (yes, you read that right)
+- CentOS Stream *(yes, you read that right)*
 
 ## Currently supported desktop environments
 - GNOME
