@@ -3,6 +3,8 @@
 gsettings set org.gnome.desktop.interface clock-show-weekday true
 # Show battery percentage
 gsettings set org.gnome.desktop.interface show-battery-percentage true
+# Place new windows in the center
+gsettings set org.gnome.mutter center-new-windows true
 
 ## Security & privacy ##
 # Set sleep delay to 15 minutes
