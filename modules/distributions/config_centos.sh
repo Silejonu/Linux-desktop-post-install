@@ -1,3 +1,16 @@
+
+## Updates ##
+sudo dnf upgrade -y
+sudo dnf autoremove -y
+flatpak update -y
+flatpak remove -y --unused
+
+## Flatpak ##
+# Add Flathub
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+# Autoselect RPM packages instead of Flatpaks in GNOME Software
+gsettings set org.gnome.software packaging-format-preference "['RPM', 'flatpak']"
+
 ## RPMFusion ##
 # Enable EPEL
 sudo dnf install -y --nogpgcheck https://dl.fedoraproject.org/pub/epel/epel-release-latest-$(rpm -E %rhel).noarch.rpm
