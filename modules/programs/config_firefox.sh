@@ -5,7 +5,7 @@ wait $(pidof firefox)
 sleep 10
 
 # Find Firefox's preferences file
-preferences_file="$(find ${HOME}/.mozilla/firefox -iname *default-release*)/prefs.js"
+preferences_file="$(find ${HOME}/.mozilla/firefox -iname *default-*)/prefs.js"
 if [[ -d ${HOME}/snap/firefox ]] ; then
   preferences_file="$(find ${HOME}/snap/firefox/common/.mozilla/firefox -iname *default | head -n1)/prefs.js"
 fi
