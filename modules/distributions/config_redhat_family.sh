@@ -49,7 +49,17 @@ sudo dnf install -y cabextract xorg-x11-font-utils
 sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 # Install WEBP images support for desktop environments which lack it by default
 case $(printf "%s" "${XDG_SESSION_DESKTOP}") in
-  gnome|cinnamon|xfce) sudo dnf install -y webp-pixbuf-loader ;;
+  gnome)
+    sudo dnf install -y webp-pixbuf-loader
+    xdg-mime default org.gnome.eog.desktop image/webp
+    ;;
+  cinnamon)
+    sudo dnf install -y webp-pixbuf-loader
+    ;;
+  xfce)
+    sudo dnf install -y webp-pixbuf-loader
+    xdg-mime default org.xfce.ristretto.desktop image/webp
+    ;;
 esac
 # Install .rar archive support for desktop environments which lack it by default
 case $(printf "%s" "${XDG_SESSION_DESKTOP}") in
