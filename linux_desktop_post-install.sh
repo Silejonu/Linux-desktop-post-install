@@ -57,7 +57,7 @@ case $(cat /etc/*-release 2> /dev/null | grep ^NAME | sed 's/NAME=//' | tr -d \"
     source ./modules/distributions/config_fedora.sh
     ;;
   'CentOS Stream')
-    source ./modules/distributions/config_centos.sh
+    source ./modules/distributions/config_redhat_family.sh
     ;;
 esac
 
