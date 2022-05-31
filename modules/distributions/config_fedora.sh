@@ -3,6 +3,8 @@ sudo dnf upgrade -y
 sudo dnf autoremove -y
 flatpak update -y
 flatpak remove -y --unused
+
+## Flatpak ##
 # Circumvent https://github.com/flatpak/flatpak/issues/4831
 sudo flatpak remote-delete flathub
 # Add Flathub
