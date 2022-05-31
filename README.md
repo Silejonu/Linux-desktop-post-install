@@ -9,6 +9,10 @@ tar xf main.tar.gz
 cd Linux-desktop-post-install-main
 bash ./linux_desktop_post-install.sh
 ```
+One-liner:
+```bash
+cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/archive/refs/heads/main.tar.gz && tar xf main.tar.gz && cd Linux-desktop-post-install-main && bash ./linux_desktop_post-install.sh
+```
 
 # Goals of this script
 - One-stop-script to configure a freshly installed Linux system.
