@@ -11,6 +11,19 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 gsettings set org.gnome.software packaging-format-preference "['RPM', 'flatpak']"
 
 ## RPMFusion ##
+# Enable the appropriate RPMFusion repos
+case $(cat /etc/*-release 2> /dev/null | grep ^NAME | sed 's/NAME=//' | tr -d \"\') in
+  'Fedora Linux')
+    # Enable RPMFusion free and nonfree
+    sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+    ;;
+  'CentOS Stream')
+    # Enable EPEL
+    sudo dnf install -y --nogpgcheck https://dl.fedoraproject.org/pub/epel/epel-release-latest-$(rpm -E %rhel).noarch.rpm
+    # Enable RPMFusion free and nonfree
+    sudo dnf install -y --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-$(rpm -E %rhel).noarch.rpm https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-$(rpm -E %rhel).noarch.rpm
+    ;;
+esac
 # Add the Appstream metadata
 sudo dnf groupupdate -y core
 # Install the complements multimedia packages needed by gstreamer enabled applications
