@@ -53,3 +53,4 @@ cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/a
 
 - [ ] Translate text with `gettext`
 - [ ] Automatically configure Linux Mint's mirrors (probably not feasible)
+- [ ] Setup microphone echo/noise cancellation
