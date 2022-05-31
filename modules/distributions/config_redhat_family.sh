@@ -5,6 +5,8 @@ flatpak update -y
 flatpak remove -y --unused
 
 ## Flatpak ##
+# Circumvent https://github.com/flatpak/flatpak/issues/4831
+sudo flatpak remote-delete flathub
 # Add Flathub
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 # Autoselect RPM packages instead of Flatpaks in GNOME Software
