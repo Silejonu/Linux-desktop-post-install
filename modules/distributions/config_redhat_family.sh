@@ -1,25 +1,9 @@
-## Flatpak ##
-# Circumvent https://github.com/flatpak/flatpak/issues/4831
-sudo flatpak remote-delete flathub
 # Add Flathub
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 # Autoselect RPM packages instead of Flatpaks in GNOME Software
 gsettings set org.gnome.software packaging-format-preference "['RPM', 'flatpak']"
 
-## RPMFusion ##
-# Enable the appropriate RPMFusion repos
-case $(cat /etc/*-release 2> /dev/null | grep ^NAME | sed 's/NAME=//' | tr -d \"\') in
-  'Fedora Linux')
-    # Enable RPMFusion free and nonfree
-    sudo dnf install -y https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-    ;;
-  'CentOS Stream')
-    # Enable EPEL
-    #sudo dnf install -y --nogpgcheck https://dl.fedoraproject.org/pub/epel/epel-release-latest-$(rpm -E %rhel).noarch.rpm
-    # Enable RPMFusion free and nonfree
-    #sudo dnf install -y --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-$(rpm -E %rhel).noarch.rpm https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-$(rpm -E %rhel).noarch.rpm
-    ;;
-esac
+
 # Add the Appstream metadata
 sudo dnf groupupdate -y core
 # Install the multimedia packages needed by gstreamer enabled applications
@@ -40,9 +24,6 @@ sudo dnf install -y \*-firmware
 sudo dnf install -y firewall-config
 # iOS devices filesystem support
 sudo dnf install -y ifuse
-# Microsoft fonts
-sudo dnf install -y cabextract xorg-x11-font-utils
-sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 # Install WEBP images support for desktop environments which lack it by default
 case $(printf "%s" "${XDG_SESSION_DESKTOP}") in
   gnome)

@@ -1,3 +1,6 @@
+## Updates ##
+sudo dnf upgrade -y
+
 # Enable EPEL
 sudo dnf install -y --nogpgcheck https://dl.fedoraproject.org/pub/epel/epel-release-latest-$(rpm -E %rhel).noarch.rpm
 # Enable RPMFusion free and nonfree
@@ -5,3 +8,7 @@ sudo dnf install -y --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion
 
 # https://github.com/Silejonu/Linux-desktop-post-install/blob/main/modules/distributions/config_redhat_family.sh
 source ./modules/distributions/config_redhat_family.sh
+
+## Additional software ##
+# LibreOffice
+sudo dnf install -y libreoffice-{calc,draw,impress,writer}
