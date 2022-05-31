@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-version='v0.2.2'
+version='v0.2.3'
 
 # Determine the language of the messages
 if [[ $(locale language) == French ]] ; then
