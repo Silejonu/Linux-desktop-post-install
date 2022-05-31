@@ -1,9 +1,3 @@
-## Updates ##
-sudo dnf upgrade -y
-sudo dnf autoremove -y
-flatpak update -y
-flatpak remove -y --unused
-
 ## Flatpak ##
 # Circumvent https://github.com/flatpak/flatpak/issues/4831
 sudo flatpak remote-delete flathub
@@ -77,3 +71,9 @@ fi
 if [[ $(lspci | grep -ci NVIDIA) -gt 0 ]] ; then
   sudo dnf install -y akmod-nvidia
 fi
+
+## Updates ##
+sudo dnf upgrade -y
+sudo dnf autoremove -y
+flatpak update -y
+flatpak remove -y --unused
