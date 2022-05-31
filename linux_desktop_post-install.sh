@@ -53,8 +53,11 @@ case $(cat /etc/*-release 2> /dev/null | grep ^NAME | sed 's/NAME=//' | tr -d \"
       sleep 1
     done
     ;;
-  'Fedora Linux'|'CentOS Stream')
+  'Fedora Linux')
     source ./modules/distributions/config_redhat_family.sh
+    ;;
+  'CentOS Stream')
+    source ./modules/distributions/config_centos.sh
     ;;
 esac
 
