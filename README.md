@@ -29,7 +29,7 @@ cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/a
 - And more!
 
 ## Currently supported distributions
-- Ubuntu
+- Ubuntu LTS
 - Linux Mint
 - Fedora Workstation
 
