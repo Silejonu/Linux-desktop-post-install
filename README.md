@@ -37,10 +37,10 @@ cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/a
 - And more!
 
 ## Currently supported distributions
-- Ubuntu LTS
-- Linux Mint
-- Fedora Workstation
-- CentOS Stream *(yes, you read that right)*
+- Ubuntu 22.04 LTS
+- Linux Mint 20.3
+- Fedora Workstation 36
+- CentOS Stream 9 *(yes, you read that right)*
 
 ## Currently supported desktop environments
 - GNOME
