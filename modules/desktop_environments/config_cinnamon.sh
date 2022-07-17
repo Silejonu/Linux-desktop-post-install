@@ -5,8 +5,6 @@ gsettings set org.nemo.desktop trash-icon-visible true
 gsettings set org.nemo.desktop computer-icon-visible false
 # Show the date in the clock
 gsettings set org.cinnamon.desktop.interface clock-show-date true
-# Set sleep delay to 15 minutes
-gsettings set org.cinnamon.desktop.session idle-delay 900
 
 ## Security & privacy ##
 # Automatically delete temporary files (after 30 days by default)
