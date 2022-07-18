@@ -3,7 +3,6 @@ sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub
 # Autoselect RPM packages instead of Flatpaks in GNOME Software
 gsettings set org.gnome.software packaging-format-preference "['RPM', 'flatpak']"
 
-
 # Add the Appstream metadata
 sudo dnf groupupdate -y core
 # Install the multimedia packages needed by gstreamer enabled applications
