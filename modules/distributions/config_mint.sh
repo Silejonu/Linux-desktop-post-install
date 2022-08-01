@@ -16,5 +16,4 @@ gsettings set com.linuxmint.updates auto-update-cinnamon-spices true
 gsettings set com.linuxmint.updates auto-update-flatpaks true
 # Automatically purge old kernels
 sudo systemctl enable mintupdate-automation-autoremove.timer
-# Needed for Linux Mint 21, to be enabled when it officially releases:
-#sudo touch /var/lib/linuxmint/mintupdate-automatic-removals-enabled
+sudo touch /var/lib/linuxmint/mintupdate-automatic-removals-enabled
