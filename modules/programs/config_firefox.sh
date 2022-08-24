@@ -49,11 +49,8 @@ sed -i 's/\\"import-button\\",//' "${preferences_file}"
 # Remove shortcuts in new tab page
 sed -i 's/browser.newtabpage.pinned//' "${preferences_file}"
 
-# Fix issues with Firefox on Linux Mint
+# Add system spell checkers to Firefox on Linux Mint (circumvent https://github.com/linuxmint/linuxmint/issues/510 & https://bugzilla.mozilla.org/show_bug.cgi?id=1786896)
 case $(cat /etc/*-release 2> /dev/null | grep ^NAME | sed 's/NAME=//' | tr -d \"\') in
   'Linux Mint')
-    # Add locale packages (circumvent https://github.com/linuxmint/linuxmint/issues/509)
-    sudo apt install -y firefox-locale-*
-    # Add system spell checkers to Firefox (circumvent https://github.com/linuxmint/linuxmint/issues/510 & https://bugzilla.mozilla.org/show_bug.cgi?id=1786896)
     echo 'user_pref("spellchecker.dictionary_path", "/usr/share/hunspell");' >> "${preferences_file}"
 esac
