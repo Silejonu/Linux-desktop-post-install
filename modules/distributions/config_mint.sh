@@ -20,4 +20,8 @@ sudo touch /var/lib/linuxmint/mintupdate-automatic-removals-enabled
 
 ## Firefox ##
 # Add locale packages (circumvent https://github.com/linuxmint/linuxmint/issues/509)
-sudo apt install -y firefox-locale-*
+message "${message_mint_install_language_packs}"
+nohup mintreport &> /dev/null
+until [[ $(pgrep mintreport | wc -l) =< 1 ]] ; do
+  sleep 1
+done
