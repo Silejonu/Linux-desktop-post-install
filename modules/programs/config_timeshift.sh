@@ -37,7 +37,8 @@ sudo tee /etc/timeshift.json << EOF > /dev/null
   ]
 }
 EOF
-# If the disk is smaller than 200 GB, do not run Timeshift automatically
+# If the disk is smaller than 200 GB, do not run Timeshift automatically,
+# but still configure it
 else
 sudo tee /etc/timeshift.json << EOF > /dev/null
 {
