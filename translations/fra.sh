@@ -3,3 +3,4 @@ message_ublock_origin='Installer uBlock Origin et l’autoriser en mode navigati
 message_confirmation='Post-installation terminée. Merci de redémarrer l’ordinateur.'
 message_mint_mirrors='Sélectionner un miroir local.'
 message_install_proprietary_drivers='Installer les pilotes propriétaires.'
+message_mint_install_language_packs='Installer les paquets de langue.'
