@@ -29,3 +29,5 @@ sudo DEBIAN_FRONTEND=noninteractive dpkg-reconfigure libdvd-pkg
 sudo apt install -y gufw
 # iOS devices filesystem support
 sudo apt install -y ifuse
+# Add Timeshift
+sudo apt install -y timeshift
