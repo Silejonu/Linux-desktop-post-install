@@ -25,10 +25,10 @@ sudo dnf install -y firewall-config
 sudo dnf install -y ifuse
 # Add HEIF images support
 sudo dnf install -y libheif
-xdg-mime default $(xdg-mime query default image/jpg) image/heic
+xdg-mime default $(xdg-mime query default image/png) image/heic
 # Add WEBP images support for desktop environments which lack it by default
 sudo dnf install -y webp-pixbuf-loader
-xdg-mime default $(xdg-mime query default image/jpg) image/webp
+xdg-mime default $(xdg-mime query default image/png) image/webp
 # Install .rar archive support for desktop environments which lack it by default
 case $(printf "%s" "${XDG_SESSION_DESKTOP}") in
   xfce) sudo dnf install -y unrar ;;
