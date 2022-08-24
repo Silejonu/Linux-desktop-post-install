@@ -4,7 +4,7 @@ disk_size=$(df --output=size / | tail -1)
 # If disk is bigger than 200 GB, then install Timeshift…
 if (( ${disk_size} > 209715200 )) ; then
   sudo apt install -y timeshift
-  # … and run it weekly while keepin the two newest snapshots
+  # … and run it weekly while keeping the two newest snapshots
   # backup all files from /
   # backup hidden files from ~
 sudo tee /etc/timeshift.json << EOF > /dev/null
