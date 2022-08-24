@@ -3,3 +3,4 @@ message_ublock_origin='Install uBlock Origin and allow it to run in private mode
 message_confirmation='Post-install finished. Please reboot the computer.'
 message_mint_mirrors='Select a local mirror.'
 message_install_proprietary_drivers='Install proprietary drivers.'
+message_mint_install_language_packs='Install language packs.'
