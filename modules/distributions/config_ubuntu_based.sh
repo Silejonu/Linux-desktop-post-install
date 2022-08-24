@@ -7,6 +7,7 @@ sudo apt install -y $(check-language-support)
 
 # Add HEIF support
 sudo apt install -y heif-gdk-pixbuf heif-thumbnailer
+xdg-mime default $(xdg-mime query default image/jpg) image/heic
 
 # Remove obsolete packages
 sudo apt autoremove -y
