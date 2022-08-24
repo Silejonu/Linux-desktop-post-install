@@ -24,7 +24,7 @@ cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/a
 - Every change done to the default distribution configuration is meant to improve user-friendliness, and does not include purely personal preferences.
 - Accounts for localisation.
 - Everything in the script must be clearly commented so one can know what the script does before running it.
-- Circumvents bugs in the distributions/desktop environments. [[1]](https://github.com/flatpak/flatpak/issues/4831) [[2]](https://bugs.launchpad.net/ubuntu/+source/wslu/+bug/1971757)
+- Circumvents bugs in the distributions/desktop environments. [[1]](https://github.com/flatpak/flatpak/issues/4831) [[2]](https://bugs.launchpad.net/ubuntu/+source/wslu/+bug/1971757) [[3]](https://github.com/linuxmint/linuxmint/issues/510)
 
 # What it actually does
 - Update the system
