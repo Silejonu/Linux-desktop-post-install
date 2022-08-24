@@ -23,20 +23,12 @@ sudo dnf install -y \*-firmware
 sudo dnf install -y firewall-config
 # iOS devices filesystem support
 sudo dnf install -y ifuse
-# Install WEBP images support for desktop environments which lack it by default
-case $(printf "%s" "${XDG_SESSION_DESKTOP}") in
-  gnome)
-    sudo dnf install -y webp-pixbuf-loader
-    xdg-mime default org.gnome.eog.desktop image/webp
-    ;;
-  cinnamon)
-    sudo dnf install -y webp-pixbuf-loader
-    ;;
-  xfce)
-    sudo dnf install -y webp-pixbuf-loader
-    xdg-mime default org.xfce.ristretto.desktop image/webp
-    ;;
-esac
+# Add HEIF images support
+sudo dnf install -y libheif
+xdg-mime default $(xdg-mime query default image/jpg) image/heic
+# Add WEBP images support for desktop environments which lack it by default
+sudo dnf install -y webp-pixbuf-loader
+xdg-mime default $(xdg-mime query default image/jpg) image/webp
 # Install .rar archive support for desktop environments which lack it by default
 case $(printf "%s" "${XDG_SESSION_DESKTOP}") in
   xfce) sudo dnf install -y unrar ;;
