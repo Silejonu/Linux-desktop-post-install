@@ -63,4 +63,10 @@ esac
 
 source ./modules/programs/config_firefox.sh
 
+echo
+message "${message_please_report_issues}"
+echo
+
+sleep 5
+
 message "${message_confirmation}"
