@@ -4,3 +4,4 @@ message_confirmation='Post-installation terminée. Merci de redémarrer l’ordi
 message_mint_mirrors='Sélectionner un miroir local.'
 message_install_proprietary_drivers='Installer les pilotes propriétaires.'
 message_mint_install_language_packs='Installer les paquets de langue.'
+message_please_report_issues='Si vous rencontrez un problème avec ce script, merci de le signaler sur GitHub (en français ou en anglais) : https://github.com/Silejonu/Linux-desktop-post-install/issues'
