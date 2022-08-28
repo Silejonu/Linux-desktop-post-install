@@ -12,5 +12,5 @@ source ./modules/distributions/config_redhat_family.sh
 ## Additional software ##
 # LibreOffice
 sudo dnf install -y libreoffice-{calc,draw,impress,writer}
-# FFmpeg for video codecs
-sudo dnf install -y ffmpeg
+# Video codecs in Firefox
+sudo dnf install -y ffmpeg gstreamer1-libav
