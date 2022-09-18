@@ -11,3 +11,7 @@ gsettings set org.cinnamon.desktop.interface clock-show-date true
 gsettings set org.cinnamon.desktop.privacy remove-old-temp-files true
 # Automatically delete old trash files (after 30 days by default)
 gsettings set org.cinnamon.desktop.privacy remove-old-trash-files true
+
+## Peripherals ##
+# Enable tap-to-clik on the touchpad
+gsettings set org.cinnamon.desktop.peripherals.touchpad tap-to-click true
