@@ -13,6 +13,7 @@ One-liner:
 ```bash
 cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/archive/refs/heads/main.tar.gz && tar xf main.tar.gz && cd Linux-desktop-post-install-main && bash ./linux_desktop_post-install.sh
 ```
+*This script is updated frequently, please don't download and run it locally. Instead, use one of the methods above to always get the latest changes.*
 
 # Goals of this script
 - One-stop-script to configure a freshly installed Linux system.
