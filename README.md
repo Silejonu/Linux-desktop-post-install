@@ -1,5 +1,6 @@
 # Linux desktop post-install
-Post-install script aimed at general-purpose desktop Linux distributions.
+Post-install script aimed at general-purpose desktop Linux distributions. It will automatically detect the distribution and desktop environment, and will run the appropriate configuration.
+
 
 # Run the script
 ```bash
@@ -47,8 +48,6 @@ cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/a
 - GNOME
 - Cinnamon
 - XFCE
-
-*The script will automatically detect the distribution and desktop environment, and will run the appropriate configuration.*
 
 # To-do
 
