@@ -27,6 +27,8 @@ preferences=(
   'user_pref("browser.tabs.inTitlebar", 1);'
   # Remove shortcuts in new tab page
   'user_pref("browser.newtabpage.pinned", "[]");'
+  # Skip Firefox View tour
+  'user_pref("browser.firefox-view.feature-tour", "{\"message\":\"FIREFOX_VIEW_FEATURE_TOUR\",\"screen\":\"\",\"complete\":true}");'
 )
 
 # Add system spell checkers to Firefox on Linux Mint (circumvent https://github.com/linuxmint/linuxmint/issues/510 & https://bugzilla.mozilla.org/show_bug.cgi?id=1786896)
