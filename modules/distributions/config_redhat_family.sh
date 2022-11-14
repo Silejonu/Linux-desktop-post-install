@@ -39,7 +39,7 @@ if [[ $(printf "%s" "${XDG_SESSION_DESKTOP}") == 'gnome' ]] ; then
   #sudo dnf install -y file-roller file-roller-nautilus
 fi
 
-## Nvidia ##
+# Install Nvidia proprietary drivers if applicable
 if [[ $(lspci | grep -ci "VGA.*NVIDIA") -gt 0 ]] ; then
   sudo dnf install -y akmod-nvidia
 fi
