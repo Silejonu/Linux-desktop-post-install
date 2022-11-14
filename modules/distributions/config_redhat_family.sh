@@ -40,7 +40,7 @@ if [[ $(printf "%s" "${XDG_SESSION_DESKTOP}") == 'gnome' ]] ; then
 fi
 
 ## Nvidia ##
-if [[ $(lspci | grep -ci NVIDIA) -gt 0 ]] ; then
+if [[ $(lspci | grep -ci "VGA.*NVIDIA") -gt 0 ]] ; then
   sudo dnf install -y akmod-nvidia
 fi
 
