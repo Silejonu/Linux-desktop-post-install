@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+clear
+
 if [[ $(locale language) == French ]] ; then
   echo
   echo 'Ce script a changé d’adresse ! Il est désormais disponible ici :'
