@@ -1,6 +1,6 @@
 # ⚠ This script had moved!
 
-**It is now available on [Codeberg](https://codeberg.org/Silejonu/Linux-desktop-post-install).  
+**It is now available and actively maintained on [Codeberg](https://codeberg.org/Silejonu/Linux-desktop-post-install).  
 If you have saved the commands used to run the script, you need to update them.**
 
 This repo will continue to exist as an entry-point to the new repo for those who starred the project.  
