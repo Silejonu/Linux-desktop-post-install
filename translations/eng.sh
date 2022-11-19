@@ -1,8 +1,0 @@
-root='Error: do not run this script with superuser privileges.'
-ublock_origin='Install uBlock Origin and allow it to run in private mode.'
-confirmation='Post-install finished. Please reboot the computer.'
-mint_mirrors='Select a local mirror.'
-install_proprietary_drivers='Install proprietary drivers.'
-mint_install_language_packs='Install language packs.'
-please_report_issues='If you encountered any issue with this script, please report it on GitHub at https://github.com/Silejonu/Linux-desktop-post-install/issues'
-nvidia_red_hat='Nvidia graphics card detected. Please follow this guide for driver installation instructions: https://rpmfusion.org/Howto/NVIDIA'
