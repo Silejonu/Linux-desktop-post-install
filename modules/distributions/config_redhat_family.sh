@@ -16,7 +16,7 @@ sudo dnf install -y libdvdcss
 # Install tainted-nonfree repo
 sudo dnf install -y rpmfusion-nonfree-release-tainted
 # Install missing firmwares
-sudo dnf install -y \*-firmware
+sudo dnf --repo=rpmfusion-nonfree-tainted install -y "*-firmware"
 
 ## Additional software ##
 # Firewall GUI
@@ -41,7 +41,7 @@ fi
 
 # Install Nvidia proprietary drivers if applicable
 if [[ $(lspci | grep -ci "VGA.*NVIDIA") -gt 0 ]] ; then
-  sudo dnf install -y akmod-nvidia
+  message "${nvidia_red_hat}"
 fi
 
 ## Updates ##
