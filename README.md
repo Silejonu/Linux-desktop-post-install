@@ -1,20 +1,27 @@
+# ⚠ This script had moved!
+
+**It is now available on [Codeberg](https://codeberg.org/Silejonu/Linux-desktop-post-install).  
+If you have saved the commands used to run the script, you need to update them.**
+
 # Linux desktop post-install
 Post-install script aimed at general-purpose desktop Linux distributions. It will automatically detect the distribution and desktop environment, and will run the appropriate configuration.
-
 
 # Run the script
 ```bash
 cd $(mktemp -d)
-wget https://github.com/Silejonu/Linux-desktop-post-install/archive/refs/heads/main.tar.gz
+wget https://codeberg.org/Silejonu/Linux-desktop-post-install/archive/main.tar.gz
 tar xf main.tar.gz
-cd Linux-desktop-post-install-main
+cd linux-desktop-post-install
 bash ./linux_desktop_post-install.sh
 ```
 One-liner:
 ```bash
-cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/archive/refs/heads/main.tar.gz && tar xf main.tar.gz && cd Linux-desktop-post-install-main && bash ./linux_desktop_post-install.sh
+cd $(mktemp -d) && wget https://codeberg.org/Silejonu/Linux-desktop-post-install/archive/main.tar.gz && tar xf main.tar.gz && cd linux-desktop-post-install && bash ./linux_desktop_post-install.sh
 ```
 *This script is updated frequently, please don't download and run it locally. Instead, use one of the methods above to always get the latest changes.*
+
+# ⚠ Information below may not be accurate any more.
+Please visit the new repo on [Codeberg](https://codeberg.org/Silejonu/Linux-desktop-post-install).
 
 # Goals of this script
 - One-stop-script to configure a freshly installed Linux system.
@@ -50,7 +57,6 @@ cd $(mktemp -d) && wget https://github.com/Silejonu/Linux-desktop-post-install/a
 - XFCE
 
 # To-do
-
 - [ ] Translate text with `gettext`
 - [ ] Automatically configure Linux Mint's mirrors (probably not feasible)
 - [ ] Setup microphone echo/noise cancellation (if needed)
