@@ -8,7 +8,9 @@ if [[ $(locale language) == French ]] ; then
   echo
   echo 'Merci d’utiliser la commande suivante pour le lancer :'
   echo
+  echo '##########################'
   echo 'cd $(mktemp -d) && wget https://codeberg.org/Silejonu/Linux-desktop-post-install/archive/main.tar.gz && tar xf main.tar.gz && cd linux-desktop-post-install && bash ./linux_desktop_post-install.sh'
+  echo '##########################'
   echo
 else
   echo 'This script has moved repos! It is now available at:'
@@ -16,6 +18,8 @@ else
   echo
   echo 'Please use the following command from now on:'
   echo
+  echo '##########################'
   echo 'cd $(mktemp -d) && wget https://codeberg.org/Silejonu/Linux-desktop-post-install/archive/main.tar.gz && tar xf main.tar.gz && cd linux-desktop-post-install && bash ./linux_desktop_post-install.sh'
+  echo '##########################'
   echo
 fi
