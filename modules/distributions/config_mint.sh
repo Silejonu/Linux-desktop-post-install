@@ -1,6 +1,6 @@
 ## Package management ##
 # Change the mirrors
-message "${message_mint_mirrors}"
+message "${mint_mirrors}"
 mintsources
 # Upgrade the Update Manager…
 sudo mintupdate-cli -ry upgrade
@@ -20,7 +20,7 @@ sudo touch /var/lib/linuxmint/mintupdate-automatic-removals-enabled
 
 ## Firefox ##
 # Add locale packages (circumvent https://github.com/linuxmint/linuxmint/issues/509)
-message "${message_mint_install_language_packs}"
+message "${mint_install_language_packs}"
 nohup mintreport &> /dev/null
 sleep 3
 until [[ $(pgrep mintreport | wc -l) < 2 ]] ; do
