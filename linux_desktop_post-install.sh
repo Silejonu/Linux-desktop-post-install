@@ -17,7 +17,7 @@ message() {
 
 # Prevent running the script as root
 if [[ ${UID} == 0 ]] ; then
-  message "${message_root}"
+  message "${root}"
   exit 1
 fi
 
@@ -38,7 +38,7 @@ case $(cat /etc/*-release 2> /dev/null | grep ^NAME | sed 's/NAME=//' | tr -d \"
     source ./modules/distributions/config_ubuntu_based.sh
     source ./modules/programs/config_timeshift.sh
     # Manually install proprietary drivers
-    message "${message_install_proprietary_drivers}"
+    message "${install_proprietary_drivers}"
     software-properties-gtk --open-tab=4
     wait "$(pidof software-properties-gtk)"
     ;;
@@ -47,7 +47,7 @@ case $(cat /etc/*-release 2> /dev/null | grep ^NAME | sed 's/NAME=//' | tr -d \"
     source ./modules/distributions/config_ubuntu_based.sh
     source ./modules/programs/config_timeshift.sh
     # Manually install proprietary drivers
-    message "${message_install_proprietary_drivers}"
+    message "${install_proprietary_drivers}"
     nohup sudo mintdrivers &> /dev/null
     until [[ $(pgrep mintdrivers | wc -l) == 0 ]] ; do
       sleep 1
@@ -64,9 +64,9 @@ esac
 source ./modules/programs/config_firefox.sh
 
 echo
-message "${message_please_report_issues}"
+message "${please_report_issues}"
 echo
 
 sleep 5
 
-message "${message_confirmation}"
+message "${confirmation}"
