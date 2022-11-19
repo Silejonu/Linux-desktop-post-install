@@ -24,7 +24,7 @@ cd $(mktemp -d) && wget https://codeberg.org/Silejonu/Linux-desktop-post-install
 *This script is updated frequently, please don't download and run it locally. Instead, use one of the methods above to always get the latest changes.*
 
 # ⚠ Information below may not be accurate any more.
-Please visit the new repo on [Codeberg](https://codeberg.org/Silejonu/Linux-desktop-post-install).
+**Please visit the new repo on [Codeberg](https://codeberg.org/Silejonu/Linux-desktop-post-install).**
 
 # Goals of this script
 - One-stop-script to configure a freshly installed Linux system.
