@@ -39,7 +39,7 @@ if [[ $(printf "%s" "${XDG_SESSION_DESKTOP}") == 'gnome' ]] ; then
   #sudo dnf install -y file-roller file-roller-nautilus
 fi
 
-# Install Nvidia proprietary drivers if applicable
+# Warn for the need of Nvidia proprietary drivers if applicable
 if [[ $(lspci | grep -ci "VGA.*NVIDIA") -gt 0 ]] ; then
   message "${nvidia_red_hat}"
 fi
