@@ -1,5 +1,5 @@
 # Install uBlock Origin
-message "${message_ublock_origin}"
+message "${ublock_origin}"
 firefox https://addons.mozilla.org/firefox/addon/ublock-origin/ &
 wait $(pidof firefox)
 
