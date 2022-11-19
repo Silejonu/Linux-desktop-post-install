@@ -3,6 +3,9 @@
 **It is now available on [Codeberg](https://codeberg.org/Silejonu/Linux-desktop-post-install).  
 If you have saved the commands used to run the script, you need to update them.**
 
+This repo will continue to exist as an entry-point to the new repo for those who starred the project.  
+You can also open a bug report from here.
+
 # Linux desktop post-install
 Post-install script aimed at general-purpose desktop Linux distributions. It will automatically detect the distribution and desktop environment, and will run the appropriate configuration.
 
