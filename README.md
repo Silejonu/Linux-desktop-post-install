@@ -1,4 +1,4 @@
-# ⚠ This script had moved!
+# ⚠ This script has moved!
 
 **It is now available and actively maintained on [Codeberg](https://codeberg.org/Silejonu/Linux-desktop-post-install).  
 If you have saved the commands used to run the script, you need to update them.**
